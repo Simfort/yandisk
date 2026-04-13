@@ -16,7 +16,7 @@ A lightweight Node.js class for interacting with Yandex Disk via its REST API.
 ## Installation
 
 ```bash
-npm install yandex-disk-client
+npm install yandisk
 ```
 
 > **Note:** This class uses built‑in Node.js modules (`node:fs/promises`, `node:path`) and the global `fetch` function. No additional dependencies are required.
@@ -91,6 +91,15 @@ const success = await disk.uploadDir("RemoteFolder", "/local/path/to/folder");
 if (success) {
   console.log("Directory uploaded successfully!");
 }
+```
+
+**Take a public url**
+
+```js
+const disk = new YandexDisk(process.env.YANDEX_TOKEN!);
+
+console.log(await disk.getPublicUrl("bear.png")); //  https://yadi.sk/d/BDc4uVNmkUn8cw
+
 ```
 
 ## API Reference
@@ -187,6 +196,14 @@ Check if a file or directory exists on Yandex Disk.
 - `path` — optional parent directory path.
 - `signal` — optional `AbortSignal`.
 - **Returns:** `true` if the resource exists, `false` otherwise.
+
+#### `getPublicUrl(filePath:string,signal:AbortSignal):Promise<string>`
+
+Get file's or directory's public url:
+
+- `filePath` - the path of the file or directory on Yandex Disk,
+- `signal` — optional `AbortSignal`.
+- **Returns:** public url.
 
 ## Error Handling
 

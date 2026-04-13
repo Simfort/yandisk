@@ -11,5 +11,6 @@ export default class YandexDisk {
     readFile(filename: string, encoding: "text" | "buffer", path?: string, signal?: AbortSignal): Promise<string | ArrayBuffer | null | undefined>;
     downloadFile(filename: string, encoding: "text" | "buffer", localPath: string, path?: string, signal?: AbortSignal): Promise<boolean>;
     exists(filename: string, path?: string, signal?: AbortSignal): Promise<boolean>;
+    getPublicUrl(filePath: string, signal?: AbortSignal): Promise<string>;
 }
 //# sourceMappingURL=index.d.ts.map

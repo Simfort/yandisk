@@ -1,6 +1,6 @@
 {
   "name": "yandisk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "yandisk: A lightweight Node.js library for interacting with the Yandex Disk REST API. Perform file uploads, downloads, manage directories, and more with a simple, promise‑based interface.",
   "repository": {
     "type": "git",
